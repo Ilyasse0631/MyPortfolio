@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Front-End Developper - ITA ITT</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .home {
+            background-image: url('../Content/img/background.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 700px;
+            display : none;
+        }
+        body {
+            margin: 0;
+        }
+
+        header {
+            margin-top: 100px;
+            background-color: #333;opacity : 0.8;
+			padding-right:20px;padding-top:5px;
+            position : fixed;top:30px;right:5px;
+			height : 420px;
+			display:none;
+        }
+		ul li {
+            color: white;
+            display: block;
+            width : 150px;
+            margin-top: 20px;
+			padding-left:20px;padding-top:10px;padding-bottom:10px;
+            opacity: 1;
+        }
+        ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: large;
+        }
+		
+		ul li a:link{
+			color : white;
+			text-decoration:none;
+		}
+		
+		ul li a:visited{
+			color:white;
+		}
+		
+        ul li a:hover {
+            text-decoration: none;
+            color: white;
+            opacity: 0.5;
+        }
+		
+        #titlePortfolio {
+            color: white;
+            padding-left: 10%;
+            display : none;
+            opacity  : 0.7;
+			margin-left : 20px;
+        }
+
+        #titlePortfolio h2 {
+			margin-left: 15%;
+			text-decoration: underline;
+			font-family: Courier;
+        }
+
+        #itt {
+            width: 7%;
+            border-radius: 100% 100%;
+            border: 0.3px solid green;
+            display :none;
+			float:left;
+        }
+		
+        #titlePortfolio:hover {
+            opacity: 0.5;
+        }
+
+        #btnMeContacter {
+            margin-left: 550px;
+            margin-top: 20px;
+            width: 236px;
+            display : none;
+        }
+		
+        .formationHeader {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            margin-top: 5px;
+        }
+		
+        .formations{
+            box-shadow: 6px;
+            background-image: url('../Content/img/background.jpg');
+            position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: none;
+			padding-top : 60px;
+			padding-left:150px;
+			padding-right:200px;
+			height: 800px;
+        }
+		.competences{
+            box-shadow: 6px;
+            background-image: url('../Content/img/background.jpg');
+            position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: none;
+			padding-top : 60px;
+			padding-left:150px;
+			padding-right:200px;
+			height:800px;
+        }
+		.contact{
+			height: 150px;
+            box-shadow: 6px;
+            background-image: url('../Content/img/background.jpg');
+            position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: none;
+			padding-top : 60px;
+			padding-left:150px;
+			padding-right:200px;
+			height: 700px;
+		}
+		
+        .formationForm{
+			text-trandform : capitalize;
+			border : border : 0.5px solid black;
+			padding-right:5px;
+			padding-top:60px;
+			padding-left:10px;
+			padding-bottom:50px;
+			margin-bottom:40px;
+			background-color : #333;
+			border-radius : 15px 15px;
+			opacity : 0.7;
+			width:520px;
+			-webkit-transition : width 1s;
+			transition : width 1s;
+		}
+		
+		.contactForm{
+			border : border : 0.5px solid black;
+			margin-left : 100px;
+			padding-right:40px;
+			padding-top:20px;
+			padding-left:40px;
+			padding-bottom:100px;
+			background-color : #333;
+			border-radius : 15px 15px;
+			opacity : 0.7;
+			width:600px;
+		}
+		
+		.formations:hover .fieldset{width:850px;}
+		.formations:hover .formationForm{width:880px;}
+		.formations:hover .title{width:880px;}
+		.competences:hover .fieldset{width:850px;}
+		.competences:hover .formationForm{width:880px;}
+		.competences:hover .title{width:880px;}
+        .fieldset {
+            width: 500px;
+			color : white;
+			-webkit-transition : width 1s;
+			transition : width 1s;
+        }
+		
+        ol li {padding : 10px;}
+		
+        input[type="button"]{width : 100%;margin-top:5px;}
+
+        .experiences {
+            box-shadow: 6px;
+            background-image: url('../Content/img/background.jpg');
+            position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: none;
+			padding-top : 60px;
+			padding-left:150px;
+			padding-right:200px;
+			height: 700px;
+        }
+		.projets {
+            box-shadow: 6px;
+            background-image: url('../Content/img/background.jpg');
+            position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: none;
+			padding-top : 60px;
+			padding-left:150px;
+			padding-right:200px;
+			height: 700px;
+        }
+		.experiences:hover .fieldset{width:850px;}
+		.experiences:hover .formationForm{width:880px;}
+		.experiences:hover .title{width:880px;}
+		hr{border-color:white;}
+		
+		#headerLogo{
+			background-color : #333;
+			padding-bottom:5px;
+			padding-left:5px;
+			padding-top:5px;
+			height :120px;
+			opacity:0.6;
+		}
+		
+		.title{
+			width : 520px;
+			background-color : #333;
+			opacity : 0.7;
+			color:white;
+			border-radius : 20px 20px;
+			padding : 5px 5px 5px 30px;
+			margin-bottom : 5px;
+			-webkit-transition : width 1s;
+			transition : width 1s;
+		}
+		.titlecontact{
+			width : 600px;
+			background-color : #333;
+			opacity : 0.7;
+			color:white;
+			border-radius : 20px 20px;
+			padding : 5px 5px 5px 30px;
+			margin-left : 100px;
+			margin-bottom : 5px;
+		}
+		.mytextbox , .mytextarea{
+			width : 520px;
+			height:30px;
+			color:black;
+		}
+		.mytextbox:focus{
+			border : 2px solid #555;
+			border-radius:5px 5px;
+			border-shadow : 4px;
+		}
+		@keyframes myanimation{
+			from{height:50px;}
+			to{height:150px;}
+		}
+		.mytextarea{
+			height:50px;
+			animation-name:myanimation;
+			animation-duration:3s;
+			animation-fill-mode:forwards;
+		}
+		.mytextarea:focus{
+			border : 2px solid #555;
+			border-radius:5px 5px;
+			border-shadow : 4px;
+		}
+		.btnSend{
+			width:100px;
+			padding:10px;
+			color:black;			
+		}
+		.skills{
+			border:0.1px solid #555;
+			padding:20px;
+		}
+		.skills:hover{
+			box-shadow:5px 5px black;
+		}
+		.not-active{
+			pointer-events : none;
+		}
+    </style>
+</head>
+<body onload="LoadFunc()">	
+    <div class="home">
+        <div id="headerLogo">
+			<img id="itt" src="../Content/img/myPhoto.jpg" />
+			<div id="titlePortfolio">
+				<h4>ITA ITT</h4>
+				<h6>Full stack engineer</h6>
+				<h6>Tel   : +212631913369</h6>
+				<h6>Email : ita.itt@gmail.com</h6>
+			</div>
+		</div>
+    </div>
+    <header>
+        <ul>
+            <li id="ahome" ><i class="fa fa-home"></i>&nbsp;<a href="#" onclick="homeFunc()">Home</a></li>
+            <li id="aformations"><i class="fa fa-book"></i>&nbsp;<a href="#" onclick="slideDownFormations()">Formations</a></li>
+            <li id="aexperiences"><i class="fa fa-desktop"></i>&nbsp;<a href="#" onclick="slideDownExperiences()">Expériences</a></li>
+            <li id="acompetences"><i class="fa fa-code"></i>&nbsp;<a href="#" onclick="slideDownCompetences()">Compétences</a></li>
+            <li id="aprojets"><i class="fa fa-tasks"></i>&nbsp;<a class="not-active" href="#" onclick="slideDownProjets()">Projets</a></li>
+            <li id="acontact"><i class="fa fa-envelope-o"></i>&nbsp;<a href="#" onclick="slideDownContact()">Me contacter</a></li>
+        </ul>
+    </header>
+
+    <section class="formations">
+		<div class="title">
+			<h5>Formations<h5>
+		</div>
+		<form class="formationForm">
+			<div class="fieldset">
+			<div class="skills">
+				<span>2010-2013 Ingénieur d'Etat en développement informatique - INS</span>
+			</div>
+			<hr>
+			<div class="skills">	
+				<span>2008-2010 Classes prépartoires aux grandes écoles des ingénieurs Maths/Physique</span>
+			</div>
+			<hr>
+			<div class="skills">
+				<span>2008 - Baccalauréat sciences mathématiques</span>
+			</div>	
+			<hr>
+			</div>
+		</form>
+    </section>
+    <section class="experiences">
+		<div class="title">
+			<h5>Expériences<h5>
+		</div>
+        <form class="formationForm">
+            <div class="fieldset">
+				<div class="skills">
+					<span>02/01/2018 - Aujourd'hui : Ingénieur développeur web .Net full stack à CAPGEMINI</span>
+					<div class="detailExp">
+						
+					</div>
+				</div>
+				<hr>
+				<div class="skills">
+					<span>16/01/2017 - 30/12/2017 : Ingénieur développeur web .NET à ATOS</span>
+					<div class="detailExp">
+					</div>
+				</div>
+				<hr>
+				<div class="skills">
+                <span>19/11/2015 - 15/01/2017 : Ingénieur développeur .NET chez IS</span>
+					<div class="detailExp">
+						
+					</div>
+				</div>
+            </div>
+        </form>
+    </section>
+
+    <section class="competences">
+		<div class="title">
+			<h5>Compétences<h5>
+		</div>
+        <form class="formationForm">
+            <div class="fieldset">
+				<div class="skills">
+					<h4 style="text-decoration:underline;">Front-End programming Skills : </h4>
+					<h6 style="font-weight:bold;">HTML5 - CSS3 - Javascript - Jquery - Bootstrap - Responsive web design - AJAX </h6>
+				</div>
+				<hr>
+				<div class="skills">
+					<h4 style="text-decoration:underline;">Back-End programming Skills : </h4>
+					<h6 style="font-weight:bold;">.Net Framework - Asp.net MVC5 - C# - VB.NET - Entity Framework - LinQ - Object Oriented Programming - Design Pattern</h6>
+				</div>
+				<hr>
+				<div class="skills">
+					<h4 style="text-decoration:underline;">Mobile programming Skills : </h4>
+					<h6 style="font-weight:bold;">PhoneGap Cordova - HTML5 - CSS3 - Javascript (.NET environement Visual Studio) -  </h6>
+					<h6 style="font-weight:bold;">Xamarin(Beginner) & C#   </h6>
+				</div>
+				<hr>
+				<div class="skills">
+					<h4 style="text-decoration:underline;">Data base programming Skills : </h4>
+					<h6 style="font-weight:bold;">Transact-SQL - Sql Server - Oracle - Toad</h6>
+				</div>
+				<hr>
+				<div class="skills">
+					<h4 style="text-decoration:underline;">Language Skill : </h4>
+					<h6 style="font-weight:bold;">English - French - Arabic</h6>
+				</div>
+            </div>
+        </form>
+	</section>
+
+    <section class="projets">
+
+	</section>
+	
+    <section class="contact">
+		<div class="titlecontact">
+			<h5>Contact<h5>
+		</div>
+        <form class="contactForm">
+            <div class="fieldset">
+                <input type="text" class="mytextbox" placeholder="Your name" /><hr>
+				<input type="text" class="mytextbox" placeholder="Your email" pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" /><hr>
+				<textarea class="mytextarea" placeholder="Your message"></textarea><hr>
+				<input type="submit" value="Send" class="btnSend"/>
+            </div>
+        </form>
+	</section>
+	
+	
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+    <script src="../Scripts/jquery-3.0.0.js"></script>
+    <script>
+		$(document).ready(function(){
+			$('header').css("display","block");
+		});
+		
+		function myMap(){
+			var mapOptions = {
+				center : new google.maps.LatLng(51.5,-0.12),
+				zoom : 10,
+				mapTypeId : google.maps.MapTypeId.HYBRID	
+			}
+			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+		}
+		function homeFunc(){
+			$('#aformations').css("background-color","transparent");
+			$('#acompetences').css("background-color","transparent");
+			$('#aprojets').css("background-color","transparent");
+			$('#acontact').css("background-color","transparent");
+			$('#aexperiences').css("background-color","transparent");
+			$('#ahome').css("background-color","#555");
+			$('.experiences').slideUp(1000);
+			$('.contact').slideUp(1000);
+            $('.competences').slideUp(1000);
+            $('.projets').slideUp(1000);
+            $('.formations').slideUp(1000);
+			$('.home').slideDown(1000);
+		}
+        function slideDownFormations() {
+            $('.home').slideUp(1000);
+			$('.experiences').slideUp(1000);
+			$('.contact').slideUp(1000);
+            $('.competences').slideUp(1000);
+            $('.projets').slideUp(1000);
+            $('.formations').slideDown(1000);
+			
+			$('#aexperiences').css("background-color","transparent");
+			$('#acompetences').css("background-color","transparent");
+			$('#aprojets').css("background-color","transparent");
+			$('#acontact').css("background-color","transparent");
+			$('#ahome').css("background-color","transparent");
+			
+			
+			$('#aformations').css("background-color","#555");
+        }
+        function slideDownExperiences() {
+            $('.home').slideUp(1000);
+			$('.formations').slideUp(1000);
+			$('.contact').slideUp(1000);
+            $('.competences').slideUp(1000);
+            $('.projets').slideUp(1000);
+            $('.experiences').slideDown(1000);
+			
+			$('#aformations').css("background-color","transparent");
+			$('#acompetences').css("background-color","transparent");
+			$('#aprojets').css("background-color","transparent");
+			$('#acontact').css("background-color","transparent");
+			$('#ahome').css("background-color","transparent");
+			
+			$('#aexperiences').css("background-color","#555");
+        }
+		function slideDownContact() {
+            $('.home').slideUp(1000);
+			$('.formations').slideUp(1000);
+			$('.experiences').slideUp(1000);
+            $('.competences').slideUp(1000);
+            $('.projets').slideUp(1000);
+            $('.contact').slideDown(1000);
+			
+			$('#aformations').css("background-color","transparent");
+			$('#acompetences').css("background-color","transparent");
+			$('#aprojets').css("background-color","transparent");
+			$('#ahome').css("background-color","transparent");
+			$('#aexperiences').css("background-color","transparent");
+			
+			$('#acontact').css("background-color","#555");
+        }
+		function slideDownProjets() {
+            $('.home').slideUp(1000);
+			$('.formations').slideUp(1000);
+			$('.experiences').slideUp(1000);
+            $('.competences').slideUp(1000);
+            $('.contact').slideUp(1000);
+            $('.projets').slideDown(1000);
+			
+			$('#aformations').css("background-color","transparent");
+			$('#acompetences').css("background-color","transparent");
+			$('#ahome').css("background-color","transparent");
+			$('#acontact').css("background-color","transparent");
+			$('#aexperiences').css("background-color","transparent");
+			
+			$('#aprojets').css("background-color","#555");
+        }
+		function slideDownCompetences() {
+            $('.home').slideUp(1000);
+			$('.formations').slideUp(1000);
+			$('.experiences').slideUp(1000);
+            $('.contact').slideUp(1000);
+            $('.projets').slideUp(1000);
+			$('.competences').slideDown(1000);
+			
+			$('#aformations').css("background-color","transparent");
+			$('#ahome').css("background-color","transparent");
+			$('#aexperiences').css("background-color","transparent");
+			$('#aprojets').css("background-color","transparent");
+			$('#acontact').css("background-color","transparent");
+			$('#acompetences').css("background-color","#555");
+        }
+        function LoadFunc() {
+			$('#ahome').css("background-color","#555");
+            $('.home').slideDown(1000);
+            $('#itt').fadeIn(2000);
+            $('#titlePortfolio').fadeIn(2000);
+        }
+    </script>
+</body>
+</html>
